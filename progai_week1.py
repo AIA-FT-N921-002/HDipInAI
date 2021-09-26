@@ -5,7 +5,7 @@ Created on Sun Sep 26 21:10:13 2021
 @author: victorf
 """
 
-import math
+import math, cmath
 
 def is_odd(your_favorite_number):
     if your_favorite_number % 2 == 0:
@@ -24,14 +24,19 @@ def is_negative_obscure_way(your_number):
     print(response)        
     
 
-def quadratic_equation_root(a, b, c):
-    discriminant = b**2 - (4 * a * c)    
-    print(f'\ndiscriminant = {discriminant}, therefore:')
+def get_discriminant(a,b,c):
+    discriminant = b**2 - (4*a*c)
+    print(f'\ndiscriminant = {discriminant}:')
+    return discriminant
+    
+
+def quadratic_equation_root(a,b,c):
+    print('\nreal-number solutions:')
+    discriminant = get_discriminant(a,b,c)    
     
     if discriminant < 0:
         # such as a=3, b=4, c=2
-        print('neither of the solutions are real numbers')
-        print('it requires a complex-number solution')
+        print('neither of the solutions are real numbers')        
         return
     
     discriminant_root = math.sqrt(discriminant)
@@ -44,7 +49,19 @@ def quadratic_equation_root(a, b, c):
     else:        
         # such as a=9, b=12, c=4
         x = -b / (2 * a)
-        print(f'there is a repeated real number solution: {x}')                     
+        print(f'there is a repeated real number solution: {x}') 
+
+
+# imported the cmath module to perform complex square root
+def quadratic_equation_root_complex(a,b,c):  
+    print('\ncomplex-number solutions:')
+    discriminant = get_discriminant(a,b,c)    
+    
+    x_minus = (-b - cmath.sqrt(discriminant)) / (2 * a)
+    x_plus = (-b + cmath.sqrt(discriminant)) / (2 * a)
+    
+    print(f'solutions are {x_minus} and {x_plus}')
+    
     
     
 # demo    
@@ -60,4 +77,5 @@ b = int(input('b: '))
 c = int(input('c: '))
 
 quadratic_equation_root(a,b,c)
+quadratic_equation_root_complex(a,b,c)
     
