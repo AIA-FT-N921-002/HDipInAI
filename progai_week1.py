@@ -15,13 +15,19 @@ def is_odd(your_favorite_number):
     
 
 def is_negative(your_number):  
-    response = 'negative' if your_number < 0 else 'positive'
-    print(response)    
+    if your_number == 0:
+        print('zero is neither positive nor negative')
+    else:            
+        response = 'negative' if your_number < 0 else 'positive'
+        print(response)    
     
 
 def is_negative_obscure_way(your_number):  
-    response = ('negative[2]', 'positive[2]')[your_number >= 0]
-    print(response)        
+    if your_number == 0:
+        print('zero is neither positive nor negative')
+    else:
+        response = ('negative[2]', 'positive[2]')[your_number >= 0]
+        print(response)     
     
 
 def get_discriminant(a,b,c):
