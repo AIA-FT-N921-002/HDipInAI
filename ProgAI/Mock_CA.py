@@ -9,8 +9,7 @@ Created on Tue Nov  9 20:44:11 2021
 # How many members are fans of a particular sport
 def count_member_by_sport(chosen_sport):
     file = open('members.csv')
-
-    count = 0
+    
     sports = dict()
 
     for i in file:
