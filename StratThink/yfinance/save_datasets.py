@@ -1,6 +1,6 @@
 import yfinance as yf
 
-company = "GME"
+company = "AAPL"
 interval = "60m"
 start = "2019-11-20"
 end = "2021-11-17"
