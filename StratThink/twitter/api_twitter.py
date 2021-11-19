@@ -33,15 +33,21 @@ def request_tweet(tweet_id):
 
 
 def search_tweets():
-    bearer = get_bearer_token()
+    uri = f'tweets/search/recent?query=from:TwitterDev&tweet.fields=created_at&expansions=author_id&user.fields=created_at'
+    response = get_twitter_api_request(uri)    
+    print(f'Status Code: {response.status_code}')    
+    response_json = response.json() 
     
-    # https://api.twitter.com/2/tweets/search/recent?query=from:TwitterDev&tweet.fields=created_at&expansions=author_id&user.fields=created_at
+    return response_json
+     
 
 
 
-tweet = request_tweet(1461460720445440013)  
+#tweet = request_tweet(1461460720445440013)  
+#print(tweet)   
 
-print(tweet)   
+tweets = search_tweets()
+print(tweets)    
     
 
 
