@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 800;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Seattle", "label": "Seattle", "shape": "dot", "size": 10}, {"id": "San Francisco", "label": "San Francisco", "shape": "dot", "size": 10}, {"id": "Denver", "label": "Denver", "shape": "dot", "size": 10}, {"id": "Chicago", "label": "Chicago", "shape": "dot", "size": 10}, {"id": "Los Angeles", "label": "Los Angeles", "shape": "dot", "size": 10}, {"id": "Kansas City", "label": "Kansas City", "shape": "dot", "size": 10}, {"id": "New York", "label": "New York", "shape": "dot", "size": 10}, {"id": "Boston", "label": "Boston", "shape": "dot", "size": 10}, {"id": "Dallas", "label": "Dallas", "shape": "dot", "size": 10}, {"id": "Atlanta", "label": "Atlanta", "shape": "dot", "size": 10}, {"id": "Houston", "label": "Houston", "shape": "dot", "size": 10}, {"id": "Miami", "label": "Miami", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Seattle", "to": "San Francisco", "weight": 807}, {"from": "Seattle", "to": "Denver", "weight": 1331}, {"from": "Seattle", "to": "Chicago", "weight": 2097}, {"from": "San Francisco", "to": "Denver", "weight": 1267}, {"from": "San Francisco", "to": "Los Angeles", "weight": 381}, {"from": "Denver", "to": "Los Angeles", "weight": 1015}, {"from": "Denver", "to": "Kansas City", "weight": 599}, {"from": "Denver", "to": "Chicago", "weight": 1003}, {"from": "Chicago", "to": "Kansas City", "weight": 533}, {"from": "Chicago", "to": "New York", "weight": 787}, {"from": "Chicago", "to": "Boston", "weight": 983}, {"from": "Los Angeles", "to": "Kansas City", "weight": 1663}, {"from": "Los Angeles", "to": "Dallas", "weight": 1435}, {"from": "Kansas City", "to": "New York", "weight": 1260}, {"from": "Kansas City", "to": "Atlanta", "weight": 864}, {"from": "Kansas City", "to": "Dallas", "weight": 496}, {"from": "Dallas", "to": "Atlanta", "weight": 781}, {"from": "Dallas", "to": "Houston", "weight": 239}, {"from": "New York", "to": "Boston", "weight": 214}, {"from": "New York", "to": "Atlanta", "weight": 888}, {"from": "Atlanta", "to": "Miami", "weight": 661}, {"from": "Atlanta", "to": "Houston", "weight": 810}, {"from": "Miami", "to": "Houston", "weight": 1187}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
