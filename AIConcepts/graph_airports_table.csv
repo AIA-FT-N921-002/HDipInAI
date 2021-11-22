@@ -1,0 +1,47 @@
+source,target,type,weight
+Seattle,San Francisco,Undirected,807
+Seattle,Denver,Undirected,1331
+Seattle,Chicago,Undirected,2097
+San Francisco,Seattle,Undirected,807
+San Francisco,Denver,Undirected,1267
+San Francisco,Los Angeles,Undirected,381
+Los Angeles,San Francisco,Undirected,381
+Los Angeles,Denver,Undirected,1015
+Los Angeles,Kansas City,Undirected,1663
+Los Angeles,Dallas,Undirected,1435
+Denver,Seattle,Undirected,1331
+Denver,San Francisco,Undirected,1267
+Denver,Los Angeles,Undirected,1015
+Denver,Kansas City,Undirected,599
+Denver,Chicago,Undirected,1003
+Chicago,Seattle,Undirected,2097
+Chicago,Denver,Undirected,1003
+Chicago,Kansas City,Undirected,533
+Chicago,New York,Undirected,787
+Chicago,Boston,Undirected,983
+Boston,Chicago,Undirected,983
+Boston,New York,Undirected,214
+New York,Boston,Undirected,214
+New York,Chicago,Undirected,787
+New York,Kansas City,Undirected,1260
+New York,Atlanta,Undirected,888
+Kansas City,Chicago,Undirected,533
+Kansas City,New York,Undirected,1260
+Kansas City,Atlanta,Undirected,864
+Kansas City,Dallas,Undirected,496
+Kansas City,Los Angeles,Undirected,1663
+Kansas City,Denver,Undirected,599
+Atlanta,New York,Undirected,888
+Atlanta,Miami,Undirected,661
+Atlanta,Houston,Undirected,810
+Atlanta,Dallas,Undirected,781
+Atlanta,Kansas City,Undirected,864
+Dallas,Atlanta,Undirected,781
+Dallas,Houston,Undirected,239
+Dallas,Los Angeles,Undirected,1435
+Dallas,Kansas City,Undirected,496
+Houston,Dallas,Undirected,239
+Houston,Atlanta,Undirected,810
+Houston,Miami,Undirected,1187
+Miami,Houston,Undirected,1187
+Miami,Atlanta,Undirected,661
